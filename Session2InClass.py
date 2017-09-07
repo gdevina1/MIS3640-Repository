@@ -40,3 +40,4 @@ print("pi equals %.3f." % 3.1415926) #f is for floating(decimal places)
 print("Age: %s. Gender: %s" % (20, True)) #s stands for string
 
 print("Growth rate: %d %%" % 7) #%% is for percentage sign
+
