@@ -59,6 +59,23 @@ remaining_secs = int(secs_since_midnight - ((hours_since_midnight * secs_per_hou
 
 print("Current time since epoch is %d days, %d:%d:%d." % (days_since, hours_since_midnight, mins_since_midnight, remaining_secs))
 
+############################################################################################################
+
+#Prof's answer
+import time
+print(time.time())
+curent = time.time()
+seconds = current % 60
+minutes = (current//60) % 60
+hours = (current//60)//60 % 24
+days = current// 60 //6 //24
+print("Current time is % days, % hours, % minutes, and % seconds from Epoch", % (days, hours, minutes, seconds))
 
 
+################################### O P E R A T O R S ######################################3###############
+
+# % - to divide and only get the remainder
+# // - to divide and only get the answer as an integer
+
+#############################################################################################################
 
