@@ -76,5 +76,73 @@ print(math.sin(radians))
 print(math.gamma(7))
 print(math.gcd(2,8)) # can only take 2 arguments
 
+###########################################################################################################
 
+#Variables and Parameters
+
+
+def print_twice(name_this):
+    print(name_this)
+    print(name_this)
+  
+
+print_twice("yahoo")
+
+def cat_twice(part1, part2):
+    cat = part1 + part2
+    print_twice(cat)
+
+    
+part1 = "Bing tiddle "
+part2 = "tiddle bang."
+cat_twice(part1,part2)
+
+############################################################################################################
+
+#Functions with returns and voids
+
+def give_me_a_break():
+    str1 = "break + kitkat"
+    return str1
+
+print(give_me_a_break())
+
+def give_me_a_break():
+    str1 = "break"
+    return str1
+    print("another break")    
+
+print(give_me_a_break()) 
+
+result = print_twice("bing")
+print(result) 
+
+##############################################################################################################
+
+#EMPTY FUNCTION
+
+#pass allows incomplete/empty functions to be ignored
+
+def nop():
+    pass
+
+age= int(input())
+if age >= 18:
+    pass #without pass, you will see error.
+    
+############################################################################################################
+
+#RETURN MORE THAN ONE VALUE
+
+####NOOOTTTTT WORKINGGG????? BUT WORKS ON EXECUTOR
+
+import math
+
+def move(x, y, step, angle):
+    nx = x + step * math.cos(angle)
+    ny = y - step * math.sin(angle)
+    return nx, ny
+
+x, y = move(100, 100, 60, math.pi / 6)
+print(x, y)
 
