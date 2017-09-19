@@ -89,7 +89,7 @@ def print_twice(name_this):
 print_twice("yahoo")
 
 def cat_twice(part1, part2):
-    cat = part1 + part2
+    cat = part1 + part2 #this variable is local so you can't use it outside the function
     print_twice(cat)
 
     
@@ -103,14 +103,23 @@ cat_twice(part1,part2)
 
 def give_me_a_break():
     str1 = "break + kitkat"
-    return str1
+    return str1 #return = "give me something back"
 
 print(give_me_a_break())
 
+#anything after the return function does not run. return has to be at the end of a function
+def give_me_a_break():
+    str1 = "break"  
+    return str1
+    print("another break") 
+
+print(give_me_a_break()) 
+
+#
 def give_me_a_break():
     str1 = "break"
+    print("another break")   
     return str1
-    print("another break")    
 
 print(give_me_a_break()) 
 

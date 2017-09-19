@@ -46,3 +46,10 @@ def my_abs(number):
 print(my_abs("sj"))
 print(my_abs(-0.397))
 
+#prof's solution
+def my_abs(n):
+    if isinstance(n, int) or isinstance(n, float):
+        if n <= 0:
+            pass
+            #to be continued
+

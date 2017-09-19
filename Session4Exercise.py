@@ -12,6 +12,12 @@ def quadratic(a, b, c):
 
 quadratic(8,-8,0)
 
-    
+#prof's solutions
+
+import math
+def quadratic(a,b,c):
+        discriminant = b**2 - 4 * a * c
+        pass #to be continued
+
     
 
