@@ -1,10 +1,7 @@
 def fibonacci(n):
-    if n==1:
+    if n==1 or n==2:
         return 1
-    result = n + fibonacci (n-2)
-    print("current n=",n)
-    print("current n=", result)
-    return result
-    
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
 print(fibonacci(12))
