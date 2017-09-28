@@ -12,6 +12,8 @@ def crazy_about_9(a, b):
       return True
     elif a + b == 9:
       return True
+    elif abs(a-b) == 9:
+      return True
     else:
       return False
 
