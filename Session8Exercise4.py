@@ -3,10 +3,10 @@
 
 #1
 def price(word):
-    letter = 0
+    
     p = 0
     for letter in word:
-        p += ord(letter) ############################ I DON'T KNOW HOW TO GET THIS RIGHT
+        p += ord(letter)-96
     return p
 
 print('bananas', '      $',price('bananas'))
