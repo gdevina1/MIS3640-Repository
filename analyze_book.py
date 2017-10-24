@@ -59,7 +59,12 @@ def most_common(hist):
 
     returns: list of (frequency, word) pairs
     """
-    pass
+    pairs = []
+    for frequency, word in hist.items():
+        pairs.append((frequency, word))
+    pairs.sort() 
+    return pairs
+
 
 
 def print_most_common(hist, num=10):
@@ -68,7 +73,9 @@ def print_most_common(hist, num=10):
     hist: histogram (map from word to frequency)
     num: number of words to print
     """
-    pass
+    pairs = most_common(hist)   
+    for frequency, word in pairs[:num]:
+        print(word, '\t', frequency)
 
 
 def subtract(d1, d2):
@@ -76,7 +83,11 @@ def subtract(d1, d2):
 
     d1, d2: dictionaries
     """
-    pass
+    d3 = {}
+    for key in d1:
+        if key not in d2:
+            d3[key] = None
+    return d3
 
 
 def random_word(hist):
@@ -84,31 +95,41 @@ def random_word(hist):
 
     The probability of each word is proportional to its frequency.
     """
-    pass
+    # t = []
+    # for word, freq in h.items():
+    #     t.extend([word] * freq)
 
+    # return random.choice(t)
+
+    t =[]
+    fp = open(filename, encoding='utf8')
+    for line in fp:
+        for word, freq in line.split():
+            t.extend([word] * freq)
+        return random.choice(t)
+#idk
 
 def main():
     hist = process_file('Pride and Prejudice.txt', skip_header=True)
     #print(hist)
-    print()
-    # print('Total number of words:', total_words(hist))
-    # print('Number of different words:', different_words(hist))
+    print('Total number of words:', total_words(hist))
+    print('Number of different words:', different_words(hist))
 
-    # t = most_common(hist)
-    # print('The most common words are:')
-    # for freq, word in t[0:20]:
-    #     print(word, '\t', freq)
+    t = most_common(hist)
+    print('The most common words are:')
+    for freq, word in t[0:20]:
+        print(word, '\t', freq)
 
-    # words = process_file('words.txt', skip_header=False)
+    words = process_file('words.txt', skip_header=False)
 
-    # diff = subtract(hist, words)
-    # print("The words in the book that aren't in the word list are:")
-    # for word in diff.keys():
-    #     print(word, end=' ')
+    diff = subtract(hist, words)
+    print("The words in the book that aren't in the word list are:")
+    for word in diff.keys():
+        print(word, end=' ')
 
-    # print("\n\nHere are some random words from the book")
-    # for i in range(100):
-    #     print(random_word(hist), end=' ')
+    print("\n\nHere are some random words from the book")
+    for i in range(100):
+        print(random_word(hist), end=' ')
 
 
 if __name__ == '__main__':
