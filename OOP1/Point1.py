@@ -30,7 +30,7 @@ new_point.y = 50
 
 def print_point(p):
     """Print a Point object in human-readable format."""
-    print('The point is (%g, %g)' % (p.x, p.y))
+    # print('The point is (%g, %g)' % (p.x, p.y))
 
 new_point = Point()
 new_point.x = 100
@@ -56,10 +56,10 @@ def distance_between_points(p1, p2):
 g_point = Point()
 g_point.x = 40
 g_point.y = -30
-print(distance_between_points(new_point,g_point))
+# print(distance_between_points(new_point,g_point))
 
-print(hasattr(g_point, 'x'))
-print(hasattr(g_point, 'z'))
+# print(hasattr(g_point, 'x'))
+# print(hasattr(g_point, 'z'))
 
 
 class Rectangle:
@@ -68,12 +68,14 @@ class Rectangle:
     attributes: width, height, corner.
     """
 
-# Alex_rect = Rectangle()
-# Alex_rect.width = 10
-# Alex_rect.height = 20
-# Alex_rect.corner = Point()
-# Alex_rect.corner.x = 1
-# Alex_rect.corner.y = 1
+
+
+Alex_rect = Rectangle()
+Alex_rect.width = 10
+Alex_rect.height = 20
+Alex_rect.corner = Point()
+Alex_rect.corner.x = 1
+Alex_rect.corner.y = 1
 
 # print_point(Alex_rect.corner)
 # print_point(my_point)
