@@ -17,9 +17,6 @@ def sed(pattern, replace, source, dest):
     fout.close()
 
 
-
-
-
 pattern = 'Hey Jude'
 replace = 'Hi Donald'
 source = 'sed_tester.txt'

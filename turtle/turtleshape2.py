@@ -22,18 +22,30 @@ def circle(t,r):
     arc(t, r, 360)
 
 def shape_2(t,r):
-    t.speed(100)
     t.hideturtle()
+    t.speed(0)
+    t.pensize(6)
     circle(t,r)
+    arc(t,r/2,180)
+    t.setheading(0)
+    #t.lt(180)
+    #t.circle(-r/2, extent = 175)
     t.penup()
-    t.sety(r)
+    arc(t,r/2,180)
     t.pendown()
-    for i in range(6):
-        circle(t, r)
-        t.lt(r)
-        circle(t, r)
-        t.lt(r)
+    arc(t,r/2,180)
+    t.penup()
+    t.sety(r/3)
+    t.pendown()
+    circle(t,r/6)
+    t.penup()
+    t.sety(4/3*r)
+    t.pendown()
+    circle(t,r/6)
 
-shape_2(gianca, 70)
+
+
+   
+shape_2(gianca, 40)
 
 turtle.mainloop()

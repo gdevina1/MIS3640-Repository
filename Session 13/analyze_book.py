@@ -60,9 +60,10 @@ def most_common(hist):
     returns: list of (frequency, word) pairs
     """
     pairs = []
-    for frequency, word in hist.items():
-        pairs.append((frequency, word))
-    pairs.sort() 
+    for freq, word in hist.items():
+        pairs.append((freq, word))
+    pairs.sort()
+    pairs.reverse() 
     return pairs
 
 
