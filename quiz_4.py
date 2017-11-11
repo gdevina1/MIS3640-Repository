@@ -12,7 +12,10 @@ class Candidate:
         votes: integer, representing number of votes
         """
         self.name = name
-        self.winning_states = []
+        if winning_states is None:
+            self.winning_states = []
+        else:
+            self.winning_states = winning_states
         # self.winning_states = winning_states
         self.votes = votes
 
@@ -20,7 +23,7 @@ class Candidate:
         """Return a string representaion of this candidate,
         including name and winning state(s).
         """
-        return 'Name of candidate: {}, Winning States: {}.'.format(self.name, self.winning_states)
+        return 'Name of candidate: {}, Winning States: {}, total votes: {}.'.format(self.name, self.winning_states, self.votes)
     
     def __gt__(self,other):
         return self.votes > other.votes    
@@ -31,9 +34,12 @@ class Candidate:
         state: a string of state abbreviation
         """
         self.winning_states.append(state)
-        self.votes += ELECTORS.get(state)
+        self.votes += ELECTORS.get(state,0)
         # ELECTORS += get(state)
         # self.votes.append(votes)
+    
+    def __len__(self):
+        return len(self.winning_states)
     
 
 def main():
@@ -50,6 +56,7 @@ def main():
     print(clinton)
     print('Does Trump win?')
     print(trump > clinton)
+    print(len(trump))
 
 if __name__ == '__main__':
     main()
